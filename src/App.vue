@@ -5,6 +5,12 @@
 </template>
 <script>
 export default {
-  name: 'App',
+  name: 'App'
 };
 </script>
+
+<style lang="scss">
+.text-strikethrough {
+  text-decoration: line-through;
+}
+</style>

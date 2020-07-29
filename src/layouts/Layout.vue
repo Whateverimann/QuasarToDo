@@ -1,14 +1,14 @@
 <template>
   <q-layout view="hHh lpR fFf">
-    <q-header elevated>
+    <q-header elevated class="bg-cyan-5">
       <q-toolbar>
         <q-toolbar-title class="absolute-center">
-          ToDoStuff
+          Do Stuff
         </q-toolbar-title>
       </q-toolbar>
     </q-header>
 
-    <q-footer>
+    <q-footer class="bg-cyan-5">
       <q-tabs>
         <q-route-tab
           v-for="link in Links"
@@ -24,11 +24,12 @@
       v-model="leftDrawerOpen"
       :breakpoint="767"
       show-if-above
+      :width="250"
       bordered
-      content-class="bg-grey-1"
+      content-class="bg-cyan-5"
     >
-      <q-list>
-        <q-item-label header class="text-grey-8">
+      <q-list dark>
+        <q-item-label header class="text-purple-1">
           Navigation
         </q-item-label>
         <NavigationLink
@@ -77,6 +78,12 @@ export default {
 </script>
 
 <style lang="scss">
+.q-drawer {
+  .q-router-link--active {
+    color: #fff !important;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .q-footer {
     display: none;
