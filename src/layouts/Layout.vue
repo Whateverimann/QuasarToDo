@@ -1,14 +1,14 @@
 <template>
   <q-layout view="hHh lpR fFf">
-    <q-header elevated class="bg-cyan-5">
+    <q-header class="bg-grey-2 text-deep-orange-4 ">
       <q-toolbar>
         <q-toolbar-title class="absolute-center">
-          Do Stuff
+          DoDoOo
         </q-toolbar-title>
       </q-toolbar>
     </q-header>
 
-    <q-footer class="bg-cyan-5">
+    <q-footer class="bg-grey-2 text-deep-orange-4">
       <q-tabs>
         <q-route-tab
           v-for="link in Links"

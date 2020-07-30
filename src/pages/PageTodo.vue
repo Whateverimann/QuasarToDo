@@ -7,7 +7,7 @@
         clickable
         v-ripple
         @click="task.completed = !task.completed"
-        :class="!task.completed ? 'bg-orange-2' : 'bg-lime-2'"
+        :class="!task.completed ? 'bg-deep-orange-2' : 'bg-light-green-2'"
       >
         <q-item-section side>
           <q-checkbox v-model="task.completed" />
@@ -41,33 +41,11 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
-  data() {
-    return {
-      tasks: [
-        {
-          id: 1,
-          name: 'workout',
-          completed: false,
-          dueDate: '2020/08/01',
-          dueTime: '20:00'
-        },
-        {
-          id: 2,
-          name: 'go to gym',
-          completed: false,
-          dueDate: '2020/09/01',
-          dueTime: '20:00'
-        },
-        {
-          id: 3,
-          name: 'stop eating like a pig',
-          completed: false,
-          dueDate: '2020/10/01',
-          dueTime: '20:00'
-        }
-      ]
-    };
+  computed: {
+    ...mapGetters('tasks', ['tasks'])
   }
 };
 </script>
