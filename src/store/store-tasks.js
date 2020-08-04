@@ -3,27 +3,27 @@ import { uuid } from '../utils.js';
 
 const state = {
   tasks: [
-    // {
-    //   id: uuid(),
-    //   name: 'workout',
-    //   completed: false,
-    //   dueDate: '2020/08/01',
-    //   dueTime: '20:00'
-    // },
-    // {
-    //   id: uuid(),
-    //   name: 'go to gym',
-    //   completed: false,
-    //   dueDate: '2020/09/01',
-    //   dueTime: '20:00'
-    // },
-    // {
-    //   id: uuid(),
-    //   name: 'stop eating like a pig',
-    //   completed: false,
-    //   dueDate: '2020/10/01',
-    //   dueTime: '20:00'
-    // }
+    {
+      id: uuid(),
+      name: 'workout',
+      completed: false,
+      dueDate: '2020/08/01',
+      dueTime: '20:00'
+    },
+    {
+      id: uuid(),
+      name: 'go to gym',
+      completed: false,
+      dueDate: '2020/09/01',
+      dueTime: '20:00'
+    },
+    {
+      id: uuid(),
+      name: 'stop eating like a pig',
+      completed: false,
+      dueDate: '2020/10/01',
+      dueTime: '20:00'
+    }
   ]
 };
 
@@ -35,8 +35,11 @@ const mutations = {
     state.tasks.splice(id, 1)[0];
   },
   ADD_TASK(state, task) {
-    console.log('mutacja');
     state.tasks.push(task);
+  },
+  EDIT_TASK(state, { id, task }) {
+    console.log('mutacja', id, task);
+    state.tasks[id] = task;
   }
 };
 
@@ -51,6 +54,10 @@ const actions = {
     let taskId = uuid();
     task.id = taskId;
     commit('ADD_TASK', task);
+  },
+  editTask({ commit }, { id, task }) {
+    console.log('akcja2');
+    commit('EDIT_TASK', { id, task });
   }
 };
 

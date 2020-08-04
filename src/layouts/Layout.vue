@@ -3,8 +3,17 @@
     <q-header class="bg-grey-2 text-deep-orange-4 ">
       <q-toolbar>
         <q-toolbar-title class="absolute-center">
-          DoDoOo
+          doToday!
         </q-toolbar-title>
+
+        <q-btn
+          to="/auth"
+          flat
+          color="deep-orange-4"
+          icon-right="account_circle"
+          label="Login"
+          class="absolute-right"
+        />
       </q-toolbar>
     </q-header>
 
